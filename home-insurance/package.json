@@ -12,8 +12,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "env-cmd -f .env react-scripts start",
+    "build": "env-cmd -f .env.local react-scripts build",
+    "start:dev": "env-cmd -f .env.development react-scripts start",
+    "build:dev": "env-cmd -f .env.development run-script build",
+    "start:prod": "env-cmd -f .env.production react-scripts start",
+    "build:prod": "env-cmd -f .env.production run-script build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -34,5 +38,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "bootstrap": "^5.2.2",
+    "env-cmd": "^10.1.0",
+    "react-query": "^3.39.2",
+    "styled-components": "^5.3.6"
   }
 }
